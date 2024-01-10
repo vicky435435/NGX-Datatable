@@ -1,0 +1,75 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+.tableHeader {
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  .searchTable {
+    margin-right: 1.2vh;
+    ion-input {
+      --background: #fff;
+      --border-radius: 10px;
+      padding: 8px;
+      margin: 0.2vh 0.5vh auto;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  
+  .ngx-datatable {
+    border-radius: 5px;
+    box-shadow: none !important;
+  }
+  
+  .ngx-datatable.fixed-header
+    .datatable-header
+    .datatable-header-inner
+    .datatable-header-cell {
+    background: #728bf3;
+    color: #fff;
+    opacity: 0.9;
+    text-wrap: wrap !important;
+    word-wrap: break-word !important;
+  }
+  
+  .ngx-datatable.material:not(.cell-selection)
+    .datatable-body-row:hover
+    .datatable-row-group {
+    background-color: #f5f6ff !important;
+  }
+  
+  .datatable-body {
+    word-wrap: break-word !important;
+  }
+  
+  .ngx-datatable .datatable-body .datatable-body-row > div {
+    align-items: center;
+  }

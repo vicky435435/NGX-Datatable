@@ -1,0 +1,102 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Ngx DataTable </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <!-- <div>
+    <ngx-datatable [rows]="rows" [columns]="columns"> </ngx-datatable>
+  </div> -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+
+        <div align="center" class="searchTable">
+          <ion-input
+            type="text"
+            class="ion-text-center"
+            placeholder="Type to filter the name column..."
+            (ionInput)="updateFilter($event)"
+          ></ion-input>
+        </div>
+
+        <ion-card>
+          <ngx-datatable
+            #table
+            class="material"
+            [columnMode]="ColumnMode.force"
+            [headerHeight]="50"
+            [footerHeight]="50"
+            [rowHeight]="'auto'"
+            [loadingIndicator]="loadingIndicator"
+            [scrollbarH]="true"
+            [limit]="10"
+            [rows]="rows"
+          >
+          <ngx-datatable-column prop="id">
+            <ng-template
+              let-column="column"
+              ngx-datatable-header-template
+              let-sort="sortFn"
+            >
+              <span class="tableHeader">ID</span>
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column prop="name">
+            <ng-template
+              let-column="column"
+              ngx-datatable-header-template
+              let-sort="sortFn"
+            >
+              <span class="tableHeader">NAME</span>
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column prop="gender">
+            <ng-template
+              let-column="column"
+              ngx-datatable-header-template
+              let-sort="sortFn"
+            >
+              <span class="tableHeader">GENDER</span>
+            </ng-template>
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              <!-- <ng-template let-value="value" ngx-datatable-cell-template> -->
+              {{ row?.gender }}
+              <!-- {{value == 'Male' ? 'Man' : 'Woman'}} -->
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column prop="company">
+            <ng-template
+              let-column="column"
+              ngx-datatable-header-template
+              let-sort="sortFn"
+            >
+              <span class="tableHeader">COMPANY</span>
+            </ng-template>
+          </ngx-datatable-column>
+
+          <ngx-datatable-column>
+            <!-- [frozenRight]="true" -->
+            <ng-template ngx-datatable-header-template>
+              <span class="tableHeader">ACTION</span>
+            </ng-template>
+
+            <ng-template let-row="row" ngx-datatable-cell-template>
+               <ion-button size="small" fill="outline" (click)="edit(row)">EDIT</ion-button>
+               <ion-button size="small" fill="outline" (click)="deleteItem(row)">DELETE</ion-button>
+            </ng-template>
+          </ngx-datatable-column>
+
+         
+
+          </ngx-datatable>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
